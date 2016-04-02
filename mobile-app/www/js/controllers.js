@@ -1,26 +1,77 @@
-angular.module('starter.controllers', ['ngCordova'])
+angular.module('starter.controllers', [])
 
 .controller('DashCtrl', function($scope, $ionicPlatform, $cordovaBeacon) {
 
-  $scope.beacons = {};
-
-  $ionicPlatform.ready(function() {
-
-    $cordovaBeacon.requestWhenInUseAuthorization();
+  var brIdentifier = 'estimote';
+  var brUuid = '37e6a92a-f8ce-11e5-9ce9-5e5517507c66';
+  var brMajor = null;
+  var brMinor = null;
+  var brNotifyEntryStateOnDisplay = true;
   
-    $rootScope.$on("$cordovaBeacon:didRangeBeaconsInRegion", function(event, pluginResult) {
-      var uniqueBeaconKey;
+  $ionicPlatform.ready(function () {
+    
+    $scope.didStartMonitoringForRegionLog = '';
+    $scope.didDetermineStateForRegionLog = '';
+    $scope.didRangeBeaconsInRegionLog = '';
 
-      console.log(pluginResult.beacons);
-      for(var i = 0; i < pluginResult.beacons.length; i++) {
-        uniqueBeaconKey = pluginResult.beacons[i].uuid + ":" + pluginResult.beacons[i].major + ":" + pluginResult.beacons[i].minor;
-        $scope.beacons[uniqueBeaconKey] = pluginResult.beacons[i];
-      }
-      $scope.$apply();
+    $scope.requestAlwaysAuthorization = function() {
+      $cordovaBeacon.requestAlwaysAuthorization();
+    };
+
+    $scope.startMonitoringForRegion = function() {
+      $cordovaBeacon.startMonitoringForRegion($cordovaBeacon.createBeaconRegion(
+        brIdentifier, brUuid, brMajor, brMinor, brNotifyEntryStateOnDisplay
+      ));
+    };
+    $scope.startRangingBeaconsInRegion = function() {
+      $cordovaBeacon.startRangingBeaconsInRegion($cordovaBeacon.createBeaconRegion(
+        brIdentifier, brUuid, brMajor, brMinor, brNotifyEntryStateOnDisplay
+      ));
+    };
+
+    $scope.stopMonitoringForRegion = function() {
+      $cordovaBeacon.stopMonitoringForRegion($cordovaBeacon.createBeaconRegion(
+        brIdentifier, brUuid, brMajor, brMinor, brNotifyEntryStateOnDisplay
+      ));
+    };
+    $scope.stopRangingBeaconsInRegion = function() {
+      $cordovaBeacon.stopRangingBeaconsInRegion($cordovaBeacon.createBeaconRegion(
+        brIdentifier, brUuid, brMajor, brMinor, brNotifyEntryStateOnDisplay
+      ));
+    };
+
+    $scope.clearLogs = function() {
+      $scope.didStartMonitoringForRegionLog = '';
+      $scope.didDetermineStateForRegionLog = '';
+      $scope.didRangeBeaconsInRegionLog = '';
+    };
+
+    // ========== Events
+
+    $scope.$on("$cordovaBeacon:didStartMonitoringForRegion", function (event, pluginResult) {
+      $scope.didStartMonitoringForRegionLog += '-----' + '\n';
+      $scope.didStartMonitoringForRegionLog += JSON.stringify(pluginResult) + '\n';
+      console.log($scope.didStartMonitoringForRegionLog);
     });
 
-    $cordovaBeacon.startRangingBeaconsInRegion($cordovaBeacon.createBeaconRegion("estimote", "b9407f30-f5f8-466e-aff9-25556b57fe6d"));
+    $scope.$on("$cordovaBeacon:didDetermineStateForRegion", function (event, pluginResult) {
+      $scope.didDetermineStateForRegionLog += '-----' + '\n';
+      $scope.didDetermineStateForRegionLog += JSON.stringify(pluginResult) + '\n';
+      console.log($scope.didStartMonitoringForRegionLog);
+    });
 
+    $scope.$on("$cordovaBeacon:didRangeBeaconsInRegion", function (event, pluginResult) {
+      $scope.didRangeBeaconsInRegionLog += '-----' + '\n';
+      $scope.didRangeBeaconsInRegionLog += JSON.stringify(pluginResult) + '\n';
+      console.log($scope.didStartMonitoringForRegionLog);
+    });
+
+    // =========/ Events
+
+    //$scope.requestAlwaysAuthorization();
+    //$scope.startMonitoringForRegion();
+    //$scope.startRangingBeaconsInRegion();
+    
   });
 })
 
