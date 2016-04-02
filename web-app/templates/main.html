@@ -1,0 +1,49 @@
+<div class="container">
+    <div class="container-bg">
+        <div class="name">
+            La Parisienne <button class="btn-settings">Settings</button>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="block-container row">
+        <div class="col50">
+            <h2>Daily Statistics</h2>
+
+            <canvas id="line"
+                    class="chart chart-line"
+                    chart-data="data"
+                    chart-labels="labels"
+                    chart-legend="true"
+                    chart-series="series"
+                    chart-click="onClick">
+            </canvas>
+        </div>
+        <div class="col50">
+            <h2>Daily Statistics {{ accepted }}/{{ sent }}</h2>
+
+            <canvas id="bar"
+                    class="chart chart-bar"
+                    chart-data="dataBar"
+                    chart-labels="labelsBar"
+                    chart-series="seriesBar">
+            </canvas>
+        </div>
+    </div>
+
+    <div class="row mt50">
+        <div class="col50">
+            <canvas id="doughnut"
+                    class="chart chart-doughnut"
+                    chart-data="dataPie"
+                    chart-labels="labelsPie">
+            </canvas>
+        </div>
+        <div class="col50">
+
+        </div>
+    </div>
+</div>
+<footer>
+    Deal Me In
+</footer>
