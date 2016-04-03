@@ -1,11 +1,13 @@
 angular.module('starter.controllers', [])
 
-.controller('DashCtrl', function($scope, $ionicPlatform, $cordovaBeacon, $ionicModal) {
+.controller('DashCtrl', function($scope, $ionicPlatform, $cordovaBeacon, $ionicModal, $state) {
 
   $scope.offer = {
     name: 'American muffins',
     imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/8/8a/Muffin_NIH.jpg',
     price: 1.00,
+    totalPrice: 1.00,
+    quantity: '1',
     description: 'All american muffins are on sale.'
   };
 
@@ -16,6 +18,10 @@ angular.module('starter.controllers', [])
     $scope.modal = modal;
     $scope.modal.show();
   });
+  $scope.buy = function() {
+    $scope.modal.hide();
+    $state.go('tab.map');
+  };
   $scope.openModal = function() {
     $scope.modal.show();
   };
