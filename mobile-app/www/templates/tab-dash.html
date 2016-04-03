@@ -4,7 +4,6 @@
     <p>
     Deal Me In is an app that alerts you of nearby offers on the fly. With Deal Me In you can catch instant offers launched by sellers who want to get rid of their stock left overs
     </p>
-    <button class="btn" ng-click="openModal()">Open</button>
 
     <div class="list">
       <a class="item item-thumbnail-left" ui-sref="tab.deal({id: key})" ng-repeat="(key, deal) in items">
@@ -14,5 +13,6 @@
       </a>
     </div>
 
+    <button class="button button-block" ng-click="openModal()"></button>
   </ion-content>
 </ion-view>
