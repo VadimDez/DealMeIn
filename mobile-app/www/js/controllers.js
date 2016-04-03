@@ -29,10 +29,6 @@ angular.module('starter.controllers', [])
   $scope.closeModal = function() {
     $scope.modal.hide();
   };
-  $scope.buy = function() {
-    $state.go('tab.detail');
-    $scope.modal.hide();
-  };
   //Cleanup the modal when we're done with it!
   $scope.$on('$destroy', function() {
     $scope.modal.remove();
