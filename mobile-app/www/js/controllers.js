@@ -119,6 +119,8 @@ angular.module('starter.controllers', [])
     map: $scope.map,
     title: 'Numa'
   });
+
+  google.maps.event.trigger(map, 'resize');
 })
 .controller('SettingsCtrl', function ($scope) {
 
