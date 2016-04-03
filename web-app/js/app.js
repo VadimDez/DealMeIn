@@ -76,6 +76,7 @@ angular.module('dealMeIn', [
   .controller('SettingsCtrl', function ($scope) {
     $scope.addNotification = addNotification;
     $scope.newNotification = getEmptyNotification();
+    $scope.editNotification = editNotification;
 
     $scope.notifications = [{
       name: 'Cheesecake',
@@ -96,5 +97,9 @@ angular.module('dealMeIn', [
     function addNotification() {
       $scope.notifications.push($scope.newNotification);
       $scope.newNotification = getEmptyNotification();
+    }
+
+    function editNotification() {
+
     }
   });

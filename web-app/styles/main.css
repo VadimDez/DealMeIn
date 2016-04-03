@@ -18,7 +18,8 @@ body {
     background-position-y: -180px;
 }
 .container-bg .name span {
-
+    line-height: 30px;
+    vertical-align: middle;
 }
 .container-bg .name {
     font-size: 40px;
