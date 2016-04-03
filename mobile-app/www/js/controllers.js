@@ -90,28 +90,31 @@ angular.module('starter.controllers', [])
     gris : true
   };
 })
-.controller('OfferCtrl', function ($scope, $stateParams) {
-
+.controller('DealCtrl', function ($scope, $stateParams) {
   var items = [{
     name: 'American muffins',
     description: 'All american muffins are on sale.',
     price: 1.0,
-    imageUrl: '/img/Muffin_NIH.jpg'
+    quantity: '1',
+    imageUrl: 'img/Muffin_NIH.jpg'
   },{
     name: 'Macarons',
     description: 'Purchase 2 large macarons of your choice, and you will receive a 3rd large pistachio for free.',
     price: 6.0,
-    imageUrl: '/img/macaron-5.png'
+    quantity: '1',
+    imageUrl: 'img/macaron-5.png'
   },{
     name: '1/2 baguette',
     description: 'Boulangerie Parisienne is offering a free 1/2 baguette with each purchase of a baguette.',
     price: 1.10,
-    imageUrl: '/img/baguette.jpg'
+    quantity: '1',
+    imageUrl: 'img/baguette.jpg'
   }];
+
+  if ($stateParams.id) {
+    $scope.offer = items[$stateParams.id];
+  }
 })
-  .controller('DealCtrl', function ($scope) {
-    
-  })
 .controller('DetailCtrl', function($scope, $stateParams) {
   $scope.offer = {
     qr : 'img/qr_code-blog-third.png'
