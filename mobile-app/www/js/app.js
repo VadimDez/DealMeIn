@@ -86,7 +86,7 @@ angular.module('starter', [
   .state('tab.detail', {
     url: '/detail',
     views: {
-      'tab-account': {
+      'tab-dash': {
         templateUrl: 'templates/detail.html',
         controller: 'DetailCtrl'
       }
@@ -104,7 +104,7 @@ angular.module('starter', [
   .state('tab.map', {
     url: '/map',
     views: {
-      'tab-account': {
+      'tab-dash': {
         templateUrl: 'templates/map.html',
         controller: 'MapCtrl'
       }
