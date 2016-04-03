@@ -109,7 +109,16 @@ angular.module('starter', [
         controller: 'MapCtrl'
       }
     }
-  });
+  })
+    .state('tab.deal', {
+      url: '/deal/:id',
+      views: {
+        'tab-dash': {
+          templateUrl: 'templates/deal.html',
+          controller: 'DealCtrl'
+        }
+      }
+    });
 
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/tab/dash');
