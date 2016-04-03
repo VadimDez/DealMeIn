@@ -92,6 +92,15 @@ angular.module('starter', [
       }
     }
   })
+  .state('tab.settings', {
+    url: '/setting',
+    views: {
+      'tab-account': {
+        templateUrl: 'templates/settings.html',
+        controller: 'SettingsCtrl'
+      }
+    }
+  })
   .state('tab.map', {
     url: '/map',
     views: {
