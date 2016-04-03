@@ -8,12 +8,12 @@ angular.module('starter.controllers', [])
     description: 'asd asd qwe sdsd'
   };
 
-
   $ionicModal.fromTemplateUrl('templates/offer-modal.html', {
     scope: $scope,
     animation: 'slide-in-up'
   }).then(function(modal) {
     $scope.modal = modal;
+    $scope.modal.show();
   });
   $scope.openModal = function() {
     $scope.modal.show();
