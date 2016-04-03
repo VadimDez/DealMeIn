@@ -43,7 +43,7 @@ angular.module('starter.controllers', [])
   });
 
   var timeout = $timeout(function() {
-    $scope.modal.show()
+    $scope.modal.show();
   }, 5000);
 
 
@@ -93,6 +93,9 @@ angular.module('starter.controllers', [])
 .controller('OfferCtrl', function ($scope) {
 
 })
+  .controller('DealCtrl', function ($scope) {
+    
+  })
 .controller('DetailCtrl', function($scope, $stateParams) {
   $scope.offer = {
     qr : 'img/qr_code-blog-third.png'
