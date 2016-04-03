@@ -5,7 +5,12 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', 'ngCordova'])
+angular.module('starter', [
+  'ionic',
+  'starter.controllers',
+  'starter.services',
+  'ngCordova'
+])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -75,6 +80,24 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
       'tab-account': {
         templateUrl: 'templates/tab-account.html',
         controller: 'AccountCtrl'
+      }
+    }
+  })
+  .state('tab.detail', {
+    url: '/detail',
+    views: {
+      'tab-account': {
+        templateUrl: 'templates/detail.html',
+        controller: 'DetailCtrl'
+      }
+    }
+  })
+  .state('tab.map', {
+    url: '/map',
+    views: {
+      'tab-account': {
+        templateUrl: 'templates/map.html',
+        controller: 'MapCtrl'
       }
     }
   });
