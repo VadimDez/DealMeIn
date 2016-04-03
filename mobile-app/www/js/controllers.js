@@ -79,6 +79,22 @@ angular.module('starter.controllers', [])
 })
 .controller('MapCtrl', function ($scope) {
   //$scope.map = { center: { latitude: 45, longitude: -73 }, zoom: 8 };
+  //48.8678115,2.3473883
+  var latLng = new google.maps.LatLng(48.8678115, 2.3473883);
+ 
+  var mapOptions = {
+    center: latLng,
+    zoom: 15,
+    mapTypeId: google.maps.MapTypeId.ROADMAP
+  };
+
+  $scope.map = new google.maps.Map(document.getElementById("map"), mapOptions);
+
+  $scope.marker = new google.maps.Marker({
+    position: latLng,
+    map: $scope.map,
+    title: 'Numa'
+  });
 })
 .controller('SettingsCtrl', function ($scope) {
   $scope.filter = {
