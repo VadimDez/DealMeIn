@@ -71,8 +71,9 @@ angular.module('starter.controllers', [])
 })
 
 .controller('AccountCtrl', function($scope) {
-  $scope.settings = {
-    enableFriends: true
+  $scope.filter = {
+    blue : true,
+    gris : true
   };
 })
 .controller('OfferCtrl', function ($scope) {
@@ -87,8 +88,5 @@ angular.module('starter.controllers', [])
   //$scope.map = { center: { latitude: 45, longitude: -73 }, zoom: 8 };
 })
 .controller('SettingsCtrl', function ($scope) {
-  $scope.filter = {
-    blue : true,
-    gris : true
-  };
+
 });
