@@ -1,11 +1,12 @@
 angular.module('starter.controllers', [])
 
 .controller('DashCtrl', function($scope, $ionicPlatform, $cordovaBeacon, $ionicModal) {
+
   $scope.offer = {
-    name: 'testName',
+    name: 'American muffins',
     imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/8/8a/Muffin_NIH.jpg',
-    price: 0.50,
-    description: 'asd asd qwe sdsd'
+    price: 1.00,
+    description: 'All american muffins are on sale.'
   };
 
   $ionicModal.fromTemplateUrl('templates/offer-modal.html', {

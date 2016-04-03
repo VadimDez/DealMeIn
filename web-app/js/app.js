@@ -79,9 +79,19 @@ angular.module('dealMeIn', [
     $scope.editNotification = editNotification;
 
     $scope.notifications = [{
-      name: 'Cheesecake',
-      description: 'Best in town',
-      price: 10.0,
+      name: 'American muffins',
+      description: 'All american muffins are on sale.',
+      price: 1.0,
+      imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/8/8a/Muffin_NIH.jpg'
+    },{
+      name: 'Macarons',
+      description: 'Purchase 2 large macarons of your choice, and you will receive a 3rd large pistachio for free.',
+      price: 6.0,
+      imageUrl: ''
+    },{
+      name: '1/2 baguette',
+      description: 'Boulangerie Parisienne is offering a free 1/2 baguette with each purchase of a baguette.',
+      price: 1.10,
       imageUrl: ''
     }];
 

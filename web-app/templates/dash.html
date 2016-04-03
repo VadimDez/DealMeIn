@@ -1,7 +1,7 @@
 <div class="">
     <div class="block-container row">
         <div class="col-sm-6">
-            <h2>Daily Statistics {{ sold }}/{{ produced }}</h2>
+            <h2>Item stock throughout the day <span class="pull-right">{{ sold }}/{{ produced }}</span></h2>
 
             <canvas id="line"
                     class="chart chart-line"
@@ -13,7 +13,7 @@
             </canvas>
         </div>
         <div class="col-sm-6">
-            <h2>Daily Offers {{ accepted }}/{{ sent }}</h2>
+            <h2>Deal success over time<span class="pull-right">{{ accepted }}/{{ sent }}</span></h2>
 
             <canvas id="bar"
                     class="chart chart-bar"
@@ -33,7 +33,13 @@
             </canvas>
         </div>
         <div class="col-sm-6">
-
+            <h2>Accepted deals</h2>
+            <p>
+                This graph shows the relative success of each type of bakery item
+            </p>
+            <p>
+                "Breads" vs "Pastries"
+            </p>
         </div>
     </div>
 </div>
