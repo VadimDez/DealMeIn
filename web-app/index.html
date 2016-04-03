@@ -8,9 +8,20 @@
     <script src="./node_modules/chart.js/dist/Chart.min.js"></script>
     <script src="./node_modules/angular-chart.js/dist/angular-chart.min.js"></script>
     <script src="./js/app.js"></script>
+    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="/styles/main.css">
 </head>
 <body ng-app="dealMeIn">
+    <div class="a-container">
+        <div class="container-bg">
+            <div class="name">
+                <span>La Parisienne</span> <a ui-sref="dash" class="btn-settings">Dash</a> <a ui-sref="settings" class="btn-settings">Settings</a>
+            </div>
+        </div>
+    </div>
     <div ui-view></div>
+    <footer>
+        Deal Me In
+    </footer>
 </body>
 </html>

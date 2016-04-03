@@ -1,0 +1,39 @@
+<div class="">
+    <div class="block-container row">
+        <div class="col-sm-6">
+            <h2>Daily Statistics {{ sold }}/{{ produced }}</h2>
+
+            <canvas id="line"
+                    class="chart chart-line"
+                    chart-data="data"
+                    chart-labels="labels"
+                    chart-legend="true"
+                    chart-series="series"
+                    chart-click="onClick">
+            </canvas>
+        </div>
+        <div class="col-sm-6">
+            <h2>Daily Offers {{ accepted }}/{{ sent }}</h2>
+
+            <canvas id="bar"
+                    class="chart chart-bar"
+                    chart-data="dataBar"
+                    chart-labels="labelsBar"
+                    chart-series="seriesBar">
+            </canvas>
+        </div>
+    </div>
+
+    <div class="row mt50">
+        <div class="col-sm-6">
+            <canvas id="doughnut"
+                    class="chart chart-doughnut"
+                    chart-data="dataPie"
+                    chart-labels="labelsPie">
+            </canvas>
+        </div>
+        <div class="col-sm-6">
+
+        </div>
+    </div>
+</div>

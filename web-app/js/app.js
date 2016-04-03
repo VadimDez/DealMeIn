@@ -12,13 +12,18 @@ angular.module('dealMeIn', [
     ChartJsProvider.setOptions({ colors : [ '#803690', '#00ADF9', '#DCDCDC', '#46BFBD', '#FDB45C', '#949FB1', '#4D5360'] });
 
     $stateProvider
-      .state('main', {
-        url: '/',
-        templateUrl: '/templates/main.html',
+      .state('dash', {
+        url: '/dash',
+        templateUrl: '/templates/dash.html',
         controller: 'MainCtrl'
+      })
+      .state('settings', {
+        url: '/settings',
+        templateUrl: '/templates/settings.html',
+        controller: 'SettingsCtrl'
       });
 
-    $urlRouterProvider.otherwise('/');
+    $urlRouterProvider.otherwise('/dash');
   })
   .controller('MainCtrl', function ($scope) {
     var workingHours = [7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20];
@@ -33,8 +38,8 @@ angular.module('dealMeIn', [
     };
 
 
-    $scope.labelsPie = ["Download Sales", "In-Store Sales", "Mail-Order Sales"];
-    $scope.dataPie = [300, 500, 100];
+    $scope.labelsPie = ["Download Sales", "In-Store Sales"];
+    $scope.dataPie = [300, 500];
 
     $scope.labelsBar = workingHours;
     $scope.seriesBar = ['Deals offered', 'Deals accepted'];
@@ -58,8 +63,38 @@ angular.module('dealMeIn', [
     var bread = [50, 20, 60, 50, 40, 70, 10, 40, 20, 15, 5, 100, 30, 1];
     var pastries = [100, 90, 80, 75, 70, 100, 40, 35, 20, 15, 50, 45, 20, 5];
 
+    $scope.sold = 245;
+    $scope.produced = 250;
+
     $scope.data = [
       bread,
       pastries
-    ]
+    ];
+
+
+  })
+  .controller('SettingsCtrl', function ($scope) {
+    $scope.addNotification = addNotification;
+    $scope.newNotification = getEmptyNotification();
+
+    $scope.notifications = [{
+      name: 'Cheesecake',
+      description: 'Best in town',
+      price: 10.0,
+      imageUrl: ''
+    }];
+
+    function getEmptyNotification() {
+      return {
+        name: '',
+        description: '',
+        price: 0,
+        imageUrl: ''
+      }
+    }
+
+    function addNotification() {
+      $scope.notifications.push($scope.newNotification);
+      $scope.newNotification = getEmptyNotification();
+    }
   });
