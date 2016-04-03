@@ -18,5 +18,15 @@
             </div>
             <div class="col-10"></div>
         </div>
+        <div class="row">
+            <button class="button button-block button-balanced">
+                Buy {{ offer.price | currency: '€' }}
+            </button>
+        </div>
+        <div class="row">
+            <button class="button button-block button-outline button-dark" ng-click="closeModal()">
+                Dismiss deal
+            </button>
+        </div>
     </ion-content>
 </ion-modal-view>
