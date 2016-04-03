@@ -21,25 +21,23 @@
         <div class="row">
             <div class="col-20"></div>
             <div class="col-30">
-                <label class="item item-input item-select item-light">
-                    <div class="input-label">
-
-                    </div>
-
-                    <select>
-                        <option value="1" selected>1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
+                <div class="text-center">Quantity</div>
+                <label class="item item-input item-select" id="quantity">
+                    <select ng-model="offer.quantity">
+                        <option value="{{ option }}" ng-repeat="option in [1, 2, 3]" ng-selected="option == offer.quantity">{{ option }}</option>
                     </select>
-
                 </label>
             </div>
-            <div class="col-40"></div>
+            <div class="col-10"></div>
+            <div class="col-30">
+                <div class="text-center">Total</div>
+                <span id="total-price">{{ offer.quantity * offer.price | currency: '€' }}</span>
+            </div>
             <div class="col-10"></div>
         </div>
         <div class="row">
             <button class="button button-block button-balanced" ng-click="buy()">
-                Buy {{ offer.price | currency: '€' }}
+                Pay {{ offer.quantity * offer.price | currency: '€' }}
             </button>
         </div>
         <div class="row">

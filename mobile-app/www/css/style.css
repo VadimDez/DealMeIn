@@ -22,3 +22,20 @@
     width: 100%;
     height: 100%;
 }
+
+#quantity {
+    width: 100px;
+    height: 40px;
+}
+
+#quantity select {
+    margin: 0 40px 0 0;
+    padding: 0;
+    width: 100px;
+}
+
+#total-price {
+    font-size: 20px;;
+    line-height: 40px;
+    vertical-align: middle;
+}

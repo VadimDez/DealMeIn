@@ -38,7 +38,10 @@ angular.module('dealMeIn', [
     };
 
 
-    $scope.labelsPie = ["Download Sales", "In-Store Sales"];
+    $scope.optionsPie = {
+      
+    };
+    $scope.labelsPie = ['Bread', 'Pastries'];
     $scope.dataPie = [300, 500];
 
     $scope.labelsBar = workingHours;

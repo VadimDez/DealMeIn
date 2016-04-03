@@ -1,11 +1,13 @@
 angular.module('starter.controllers', [])
 
-.controller('DashCtrl', function($scope, $state,$ionicPlatform, $ionicModal, $timeout) {
+.controller('DashCtrl', function($scope, $ionicPlatform, $ionicModal, $state, $timeout) {
 
   $scope.offer = {
     name: 'American muffins',
     imageUrl: '/img/Muffin_NIH.jpg',
     price: 1.00,
+    totalPrice: 1.00,
+    quantity: '1',
     description: 'All american muffins are on sale.'
   };
 
@@ -16,6 +18,10 @@ angular.module('starter.controllers', [])
     $scope.modal = modal;
     //$scope.modal.show();
   });
+  $scope.buy = function() {
+    $scope.modal.hide();
+    $state.go('tab.map');
+  };
   $scope.openModal = function() {
     $timeout.cancel(timeout);
     $scope.modal.show();
@@ -65,8 +71,9 @@ angular.module('starter.controllers', [])
 })
 
 .controller('AccountCtrl', function($scope) {
-  $scope.settings = {
-    enableFriends: true
+  $scope.filter = {
+    blue : true,
+    gris : true
   };
 })
 .controller('OfferCtrl', function ($scope) {
@@ -97,8 +104,5 @@ angular.module('starter.controllers', [])
   });
 })
 .controller('SettingsCtrl', function ($scope) {
-  $scope.filter = {
-    blue : true,
-    gris : true
-  };
+
 });
