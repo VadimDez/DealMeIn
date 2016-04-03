@@ -7,7 +7,7 @@
     <button class="btn" ng-click="openModal()">Open</button>
 
     <div class="list">
-      <a class="item item-thumbnail-left" href="#" ng-repeat="deal in items">
+      <a class="item item-thumbnail-left" ui-sref="tab.deal({id: key})" ng-repeat="(key, deal) in items">
         <img ng-src="{{ deal.imageUrl }}">
         <h2>{{ deal.name }}</h2>
         <p>{{ deal.description }}</p>
