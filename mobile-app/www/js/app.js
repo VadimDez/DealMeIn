@@ -10,6 +10,7 @@ angular.module('starter', [
   'starter.controllers',
   'starter.services',
   'ngCordova'
+  //'uiGmapgoogle-maps'
 ])
 
 .run(function($ionicPlatform) {
@@ -105,4 +106,10 @@ angular.module('starter', [
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/tab/dash');
 
+  /*uiGmapGoogleMapApiProvider.configure({
+      v: '3.17',
+      libraries: '',
+      language: 'en',
+      sensor: 'false',
+  })*/
 });
