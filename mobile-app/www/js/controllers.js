@@ -1,6 +1,6 @@
 angular.module('starter.controllers', [])
 
-.controller('DashCtrl', function($scope, $ionicPlatform, $cordovaBeacon, $ionicModal) {
+.controller('DashCtrl', function($scope, $ionicPlatform, $ionicModal, $timeout) {
 
   $scope.offer = {
     name: 'American muffins',
@@ -14,7 +14,7 @@ angular.module('starter.controllers', [])
     animation: 'slide-in-up'
   }).then(function(modal) {
     $scope.modal = modal;
-    $scope.modal.show();
+    //$scope.modal.show();
   });
   $scope.openModal = function() {
     $scope.modal.show();
@@ -34,6 +34,10 @@ angular.module('starter.controllers', [])
   $scope.$on('modal.removed', function() {
     // Execute action
   });
+
+  $timeout(function() {
+    $scope.modal.show()
+  }, 10000);
 })
 
 .controller('ChatsCtrl', function($scope, Chats) {
