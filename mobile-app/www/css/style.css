@@ -1,1 +1,15 @@
 /* Empty. Add your own CSS if you like */
+#offerModal .button.ion-heart {
+    color: red;
+    font-size: 20px;
+    background-color: transparent;
+}
+
+#main-img {
+    width: 100%;
+}
+
+#offerModal .description {
+    text-align: center;
+    color: #909090;
+}

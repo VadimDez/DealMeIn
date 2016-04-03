@@ -1,0 +1,22 @@
+<ion-modal-view id="offerModal">
+    <ion-header-bar>
+        <h1 class="title">{{ offer.name }}</h1>
+        <div class="buttons">
+            <button class="button ion-heart" data-pack="default" data-tags="love"></button>
+        </div>
+    </ion-header-bar>
+    <ion-content>
+        <div class="row">
+            <div class="col">
+                <img id="main-img" ng-src="{{ offer.imageUrl }}" alt="">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-10"></div>
+            <div class="col-80 description">
+                {{ offer.description }}
+            </div>
+            <div class="col-10"></div>
+        </div>
+    </ion-content>
+</ion-modal-view>
