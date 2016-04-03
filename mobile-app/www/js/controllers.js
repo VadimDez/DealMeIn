@@ -4,7 +4,7 @@ angular.module('starter.controllers', [])
 
   $scope.offer = {
     name: 'American muffins',
-    imageUrl: '/img/Muffin_NIH.jpg',
+    imageUrl: 'img/Muffin_NIH.jpg',
     price: 1.00,
     totalPrice: 1.00,
     quantity: '1',
@@ -51,17 +51,17 @@ angular.module('starter.controllers', [])
     name: 'American muffins',
     description: 'All american muffins are on sale.',
     price: 1.0,
-    imageUrl: '/img/Muffin_NIH.jpg'
+    imageUrl: 'img/Muffin_NIH.jpg'
   },{
     name: 'Macarons',
     description: 'Purchase 2 large macarons of your choice, and you will receive a 3rd large pistachio for free.',
     price: 6.0,
-    imageUrl: '/img/macaron-5.png'
+    imageUrl: 'img/macaron-5.png'
   },{
     name: '1/2 baguette',
     description: 'Boulangerie Parisienne is offering a free 1/2 baguette with each purchase of a baguette.',
     price: 1.10,
-    imageUrl: '/img/baguette.jpg'
+    imageUrl: 'img/baguette.jpg'
   }];
 })
 
