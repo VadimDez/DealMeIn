@@ -4,7 +4,7 @@ angular.module('starter.controllers', [])
 
   $scope.offer = {
     name: 'American muffins',
-    imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/8/8a/Muffin_NIH.jpg',
+    imageUrl: '/img/Muffin_NIH.jpg',
     price: 1.00,
     totalPrice: 1.00,
     quantity: '1',
@@ -23,9 +23,14 @@ angular.module('starter.controllers', [])
     $state.go('tab.map');
   };
   $scope.openModal = function() {
+    $timeout.cancel(timeout);
     $scope.modal.show();
   };
   $scope.closeModal = function() {
+    $scope.modal.hide();
+  };
+  $scope.buy = function() {
+    $state.go('tab.detail');
     $scope.modal.hide();
   };
   //Cleanup the modal when we're done with it!
@@ -41,9 +46,9 @@ angular.module('starter.controllers', [])
     // Execute action
   });
 
-  $timeout(function() {
+  var timeout = $timeout(function() {
     $scope.modal.show()
-  }, 10000);
+  }, 5000);
 })
 
 .controller('ChatsCtrl', function($scope, Chats) {
@@ -80,4 +85,10 @@ angular.module('starter.controllers', [])
 })
 .controller('MapCtrl', function ($scope) {
   //$scope.map = { center: { latitude: 45, longitude: -73 }, zoom: 8 };
+})
+.controller('SettingsCtrl', function ($scope) {
+  $scope.filter = {
+    blue : true,
+    gris : true
+  };
 });
