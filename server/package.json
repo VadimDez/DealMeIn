@@ -8,7 +8,7 @@
     "start": "node server.js",
     "dev": "./node_modules/nodemon/bin/nodemon.js --exec ./node_modules/babel-cli/bin/babel-node.js server.js"
   },
-  "author": "Vadym Yatsyuk <vadym.yatsyuk@gmail.com",
+  "author": "Vadym Yatsyuk <vadym.yatsyuk@gmail.com>",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.15.0",
